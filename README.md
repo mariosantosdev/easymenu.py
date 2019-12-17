@@ -13,22 +13,26 @@ pip install EasyMenu
 ## Como Usar
 
 ```python
-from easy_menu import easymenu
+from EasyMenu import *
 
-options = ['Sim', 'Não'] # Data Type <list>
-attr = ["print('Continuando...')", "exit()"] # Data Type <list>
-question = 'Deseja continuar ?' # Data Type <str>
-response = 'Escolha uma opção: ' # Data Type <str>
+option = {
+    "Sim" : "print('Hello, World!')",
+    "Não" : "exit()"
+}
 
-menu = easymenu.Menu(options, attr, question, response)
-menu.menu()
+menu = menu_nocolor.Menu(options=option, question='Deseja continuar ?', qchoice='Escolha uma opção: ')
+eval(menu.display())
+
 ```
 
 ## Menu Final
+
 > Menu Com Cor
+
 ![](https://i.imgur.com/sQFMTv9.png)
 
 > Menu Sem Cor
+
 ![](https://i.imgur.com/vRV2lnJ.png)
 
 ## Contribuição
