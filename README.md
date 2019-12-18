@@ -1,6 +1,7 @@
 # EasyMenu.py
 
-Uma biblioteca feita para facilitar o desenvolvimento de menu interativo no Python 3.6.x
+Uma biblioteca feita para facilitar o desenvolvimento de menu interativo no Python 3.6.x  
+*Visite [EasyMenu Documentation](https://nvrsantos.github.io/easymenu.py/) para uma documentação completa!*
 
 ## Como Instalar
 
