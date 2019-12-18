@@ -70,11 +70,14 @@ class Menu:
 
                 for opcao in self.option:
                     contagem += 1
+
                     if resposta == contagem:
+
                         try: # Tenta executar o código do usuario
                             eval(self.option[opcao])  # Executa comando do usuário
-                        except NameError as e: # Se o código do usuario for uma def customizada
+                        except NameError: # Se o código do usuario for uma def customizada
                             return(self.option[opcao]) # Retorna o código para a def display
+
                     elif resposta == toption + 1:  # Escolheu Sair
                         print(f'{self.bold} Até mais...{self.reset}\n')
                         exit()
