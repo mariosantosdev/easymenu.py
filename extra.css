@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
 
+.wy-nav-top{
+  background-color: #6c5ce7 !important;
+}
+
 .wy-side-nav-search{
   background-color: #6c5ce7 !important;
 }
