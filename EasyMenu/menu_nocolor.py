@@ -46,9 +46,9 @@ class Menu:
 
         while True:
             # Printa o cabeçalho do Menu
-            print(f'{self.bold}-'*37)
+            print(f'{Self.bold}-' * 37)
             print(f'{self.question.center(37)}')
-            print(f'-'*37)
+            print('-' * 37)
 
             toption = len(self.option)  # Size do option
             numero = 0  # Variavel para contagem dos números de atributos
