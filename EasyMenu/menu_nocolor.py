@@ -27,8 +27,8 @@ class Menu:
         response : str
             Pergunta para o final do menu
     """
-    def __init__(self, options, question, qchoice):
-        self.option = options  # Parametro das opções
+    def __init__(self, option, question, qchoice):
+        self.option = option  # Parametro das opções
         self.question = question  # Parametro das opções
         self.response = qchoice  # Parametro da pergunta da escolha
 
@@ -37,9 +37,12 @@ class Menu:
 
     def __start(self):
         # Verifica se o parametro das opções tem a opção de Sair
-        if 'Sair' in self.option:
+        if 'Sair' or 'sair' in self.option:
             # Se tiver a opção remove, ela (será adicionado novamente)
-            self.option.pop('Sair')
+            try:
+                self.option.remove('Sair')
+            except Exception:
+                self.option.remove('sair')
 
         while True:
             # Printa o cabeçalho do Menu
@@ -56,12 +59,12 @@ class Menu:
 
             print(f' [ {toption + 1} ]{self.reset} - Sair{self.reset}')  # Sair
             print(f'{self.bold}-' * 37)  # Separador com estilização BOLD
+
             resposta = input(f'{self.reset} {self.response}')  # input opção
             resposta = int(resposta)
             print('\n')  # Pula linha
 
             # Verifica se o usuario escolheu uma opção valida
-
             if resposta > toption + 1 or resposta < 1:
                 print(f'Error: Escolha um número válido...')  # Print erro
             else:
@@ -70,10 +73,16 @@ class Menu:
                 for opcao in self.option:
                     contagem += 1
                     if resposta == contagem:
-                        try: # Tenta executar o código do usuario
-                            eval(self.option[opcao])  # Executa comando do usuário
-                        except NameError as e: # Se o código do usuario for uma def customizada
-                            return(self.option[opcao]) # Retorna o código para a def display
+
+                        try:  # Tenta executar o código do usuario
+                            # Executa comando do usuário
+                            eval(self.option[opcao])
+
+                        # Se o código do usuario for uma def customizada
+                        except NameError:
+                            # Retorna o código para a def display
+                            return(self.option[opcao])
+
                     elif resposta == toption + 1:  # Escolheu Sair
                         print(f'{self.bold} Até mais...{self.reset}\n')
                         exit()
@@ -84,13 +93,13 @@ class Menu:
             Mostra o menu para o usuario
         """
         if(type(self.option) != dict):  # Verifica se o atributo é um dict
-            raise __InputError('O atributo OPTIONS deve ser do tipo <dict>')
+            raise __InputError('O atributo OPTION deve ser do tipo <dict>')
 
         elif(type(self.question) != str):  # Verifica se o atributo é uma str
             raise __InputError('O atributo QUESTION deve ser do tipo <str>')
 
         elif(type(self.response) != str):  # Verifica se o atributo é uma str
-            raise __InputError('O atributo qchoice deve ser do tipo <str>')
+            raise __InputError('O atributo QCHOICE deve ser do tipo <str>')
 
         else:  # Iniciar o código
             return(self.__start())
