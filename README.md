@@ -13,7 +13,7 @@ pip install EasyMenu
 ## Como Usar
 
 ```python
-from EasyMenu import *
+from EasyMenu import menu, menu_nocolor
 
 option = {
     "Sim": "print('Hello, World!')",
