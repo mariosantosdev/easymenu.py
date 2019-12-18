@@ -1,9 +1,8 @@
-from EasyMenu import *
-
+from EasyMenu import easymenu
 option = {
-    "Sim" : "print('Hello, World!')",
-    "Não" : "exit()"
+    "Sim": "print('Hello, World!')",
+    "Não": "exit()"
 }
 
-menu = menu_nocolor.Menu(options=option, question='Deseja continuar ?', qchoice='Escolha uma opção: ')
+menu = menu_nocolor.Menu(option, 'Deseja continuar ?', 'Escolha uma opção: ')
 eval(menu.display())
