@@ -7,13 +7,15 @@ option = {
     "Não": "exit()"
 }
 
+parametros = [option, 'Deseja continuar ?', 'Escolha uma opção: ']
+
 if style == 'S':
-    menu = menu.Menu(option, 'Deseja continuar ?', 'Escolha uma opção: ')
+    menu = menu.Menu(*parametros)
     eval(menu.display())
 
 elif style == 'N':
     question = "Deseja continuar?"
-    menu = menu_nocolor.Menu(option, question, 'Escolha uma opção: ')
+    menu = menu_nocolor.Menu(*parametros)
     eval(menu.display())
 else:
     print('Opção inválida')
