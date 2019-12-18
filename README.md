@@ -20,7 +20,7 @@ option = {
     "Não" : "exit()"
 }
 
-menu = menu_nocolor.Menu(options=option, question='Deseja continuar ?', qchoice='Escolha uma opção: ')
+menu = menu_nocolor.Menu(option=option, question='Deseja continuar ?', qchoice='Escolha uma opção: ')
 eval(menu.display())
 
 ```
