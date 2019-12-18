@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
+
+.wy-side-nav-search{
+  background-color: #6c5ce7 !important;
+}
+
+.wy-side-nav-search input[type=text]{
+  border-color: #483bb3 !important;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #777;
+}
+
+h5 {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #a29bfe;
+}

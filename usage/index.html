@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Como Usar - EasyMenu Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Como Usar";
+    var mkdocs_page_input_path = "usage.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> EasyMenu Documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Inicio</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../installation/">Instalação</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Como Usar</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#como-usar">Como Usar</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#comandos">Comandos</a></li>
+        
+            <li><a class="toctree-l3" href="#exemplos">Exemplos</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">EasyMenu Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Como Usar</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nvrsantos/easymenu.py/edit/master/docs/usage.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="como-usar">Como Usar</h1>
+<h3 id="comandos">Comandos</h3>
+<ul>
+<li><code>menu_nocolor.Menu([opções], [título do menu], [pergunta do menu])</code> - Cria um menu sem cores</li>
+<li><code>menu.Menu([opções], [título do menu], [pergunta do menu])</code> - Cria um menu com cores</li>
+</ul>
+<hr />
+<h3 id="exemplos">Exemplos</h3>
+<ul>
+<li>Não é preciso adicionar a opção <em>Sair</em>, ela <strong>sempre</strong> será adicionada por padrão.</li>
+</ul>
+<h5 id="menu-sem-cor">Menu Sem Cor</h5>
+<pre><code class="python">from EasyMenu import menu_nocolor
+
+option = {
+  &quot;Sim&quot;: &quot;print('Hello, World!')&quot;,
+  &quot;Não&quot;: &quot;exit()&quot;
+}
+
+menu = menu_nocolor.Menu(option, 'Deseja continuar ?', 'Escolha uma opção: ')
+eval(menu.display())
+</code></pre>
+
+<p><img alt="" src="https://i.imgur.com/vRV2lnJ.png" /></p>
+<hr />
+<h5 id="menu-com-cor">Menu Com Cor</h5>
+<pre><code class="python">from EasyMenu import menu
+
+option = {
+  &quot;Sim&quot;: &quot;print('Hello, World!')&quot;,
+  &quot;Não&quot;: &quot;exit()&quot;
+}
+
+menu = menu.Menu(option, 'Deseja continuar ?', 'Escolha uma opção: ')
+eval(menu.display())
+</code></pre>
+
+<p><img alt="" src="https://i.imgur.com/sQFMTv9.png" /></p>
+<hr />
+<h5 id="executar-funcao-customizada">Executar função customizada</h5>
+<pre><code class="python">from EasyMenu import menu_nocolor
+
+def customFunction():
+  print('Até Mais...')
+  exit()
+
+option = {
+  &quot;Sim&quot;: &quot;print('Hello, World!')&quot;,
+  &quot;Não&quot;: &quot;customFunction()&quot;
+}
+
+menu = menu_nocolor.Menu(option, 'Deseja continuar ?', 'Escolha uma opção: ')
+eval(menu.display())
+</code></pre>
+
+<p><img alt="" src="https://i.imgur.com/vRV2lnJ.png" /></p>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../installation/" class="btn btn-neutral" title="Instalação"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nvrsantos/easymenu.py/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../installation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+
+</body>
+</html>
