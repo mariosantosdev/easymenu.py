@@ -37,12 +37,11 @@ class Menu:
 
     def __start(self):
         # Verifica se o parametro das opções tem a opção de Sair
-        if 'Sair' or 'sair' in self.option:
+        if 'Sair' in self.option:
             # Se tiver a opção remove, ela (será adicionado novamente)
-            try:
-                self.option.remove('Sair')
-            except Exception:
-                self.option.remove('sair')
+            self.option.pop('Sair')
+        elif 'sair' in self.option:
+            self.option.pop('sair')
 
         while True:
             # Printa o cabeçalho do Menu

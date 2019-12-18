@@ -1,4 +1,4 @@
-from EasyMenu import easymenu
+from EasyMenu import *
 option = {
     "Sim": "print('Hello, World!')",
     "Não": "exit()"

@@ -40,6 +40,8 @@ class Menu:
         if 'Sair' in self.option:
             # Se tiver a opção remove, ela (será adicionado novamente)
             self.option.pop('Sair')
+        elif 'sair' in self.option:
+            self.option.pop('sair')
 
         while True:
             # Printa o cabeçalho do Menu
