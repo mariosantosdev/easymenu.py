@@ -46,7 +46,7 @@ class Menu:
 
         while True:
             # Printa o cabeçalho do Menu
-            print(f'{Self.bold}-' * 37)
+            print(f'{self.bold}-' * 37)
             print(f'{self.question.center(37)}')
             print('-' * 37)
 
