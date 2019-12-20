@@ -1,4 +1,4 @@
-from EasyMenu import *
+from EasyMenu import menu_nocolor
 option = {
     "Sim": "print('Hello, World!')",
     "Não": "exit()"
